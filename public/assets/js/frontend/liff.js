@@ -67,6 +67,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             // });
 
             // console.log(liff_id);
+            let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 // setTimeout(function () {
                 //     if($('#step0_box')){
