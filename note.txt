@@ -1,2 +1,1 @@
-
 git ftp push -u ftp_chess -p 'b237893c7c805' ftp://35.224.224.99
