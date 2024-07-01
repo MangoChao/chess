@@ -1,0 +1,13 @@
+/runtime/*
+/public_html/uploads/*
+/application/extra/*
+/application/database.php
+/application/config.php
+.idea
+composer.lock
+*.log
+*.css.map
+!.gitkeep
+.env
+.svn
+.vscode
