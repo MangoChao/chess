@@ -14,7 +14,9 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
 
                 let cho_chess = $("#cho_chess").val();
                 let choChessArray = cho_chess.split(',');
+                console.log(choChessArray);
                 choChessArray.push(cho);
+                console.log(choChessArray);
                 $("#cho_chess").val(choChessArray.join(',')); 
 
                 const ids = ['cho1', 'cho2', 'cho3', 'cho4', 'cho5'];
