@@ -64,5 +64,4 @@ class Liff extends Frontend
         $this->view->assign('chess', $this->chess);
         return $this->view->fetch();
     }
-
 }

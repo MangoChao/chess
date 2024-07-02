@@ -44,7 +44,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                         liff.sendMessages([
                             {
                                 type: "text",
-                                text: cho_chess,
+                                text: Config.url.furl+'?cho='+cho_chess,
                             },
                         ])
                         .then(() => {
