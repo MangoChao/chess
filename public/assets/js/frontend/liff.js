@@ -34,7 +34,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 }
             });
 
-            var mload = layer.load();
+            // var mload = layer.load();
             let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
@@ -58,7 +58,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 }else{
                     Layer.msg('載入異常');
                 }
-                layer.close(mload);
+                // layer.close(mload);
             });
         },
     };
