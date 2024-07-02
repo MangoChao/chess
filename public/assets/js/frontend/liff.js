@@ -12,11 +12,14 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 $(this).addClass("active");
                 let cho = $(this).data("id");
 
+                let choChessArray = [];
                 let cho_chess = $("#cho_chess").val();
-                let choChessArray = cho_chess.split(',');
-                console.log(choChessArray);
-                choChessArray.push(cho);
-                console.log(choChessArray);
+                if(cho_chess == ""){
+                    choChessArray = [cho];
+                }else{
+                    choChessArray = cho_chess.split(',');
+                    choChessArray.push(cho);
+                }
                 $("#cho_chess").val(choChessArray.join(',')); 
 
                 const ids = ['cho1', 'cho2', 'cho3', 'cho4', 'cho5'];
