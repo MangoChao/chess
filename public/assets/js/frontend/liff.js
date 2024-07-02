@@ -39,11 +39,12 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
                 if(liffContext.userId){
-                    $(document).on("click", "#test", function () {
+                    $(document).on("click", ".send_btn", function () {
+                        let cho_chess = $("#cho_chess").val();
                         liff.sendMessages([
                             {
                                 type: "text",
-                                text: "Hello, World!",
+                                text: cho_chess,
                             },
                         ])
                         .then(() => {
