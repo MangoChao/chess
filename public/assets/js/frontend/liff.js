@@ -9,64 +9,6 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
     var Controller = {
         index: function () {
             var mload = layer.load();
-            // Toastr.options.timeOut = '2500';
-            // Form.api.bindevent($("#mform"), function (mthis, result, ret){
-            //     let code = result.data.code;
-            //     if(code == 0){
-            //         let line_link = result.data.line_link;
-            //         $('#line_link').attr('href',line_link);
-            //         $('.step_box').hide();
-            //         $('#step02_box').show();
-            //     }else if(code == 1){
-            //         // let phone = result.data.phone;
-            //         // $('#step03_phone').val(phone);
-            //         // $('.step_box').hide();
-            //         // $('#step03_box').show();
-            //     }else{
-            //         Layer.msg(result.msg);
-            //     }
-            // });
-            
-            // Form.api.bindevent($("#mform2"), function (mthis, result, ret){
-            //     let code = result.data.code;
-            //     if(code == 0){
-            //         let line_link = result.data.line_link;
-            //         $('#line_link').attr('href',line_link);
-            //         $('.step_box').hide();
-            //         $('#step02_box').show();
-            //     }else{
-            //         Layer.msg(result.msg);
-            //     }
-            // });
-
-            
-            // $(document).on("click", ".btn_iscust", function () {
-            //     let options = {
-            //         url: Config.url.api+'/customer/iscust', 
-            //         type: "POST",
-            //         data: $('#mform').serialize(),
-            //         dataType: 'json',
-            //         success: function (ret) {
-            //             let code = ret.data.code;
-            //             if(code == 0){
-            //                 let line_link = ret.data.line_link;
-            //                 $('#line_link').attr('href',line_link);
-            //                 $('.step_box').hide();
-            //                 $('#step02_box').show();
-            //             }else if(code == 1){
-            //                 Toastr.error(ret.msg);
-            //             }else{
-            //                 Layer.msg(ret.msg);
-            //             }
-            //         },
-            //         error: function (ret) {
-            //             Layer.msg(ret.msg);
-            //         }
-            //     };
-            //     $.ajax(options);
-            // });
-
-            // console.log(liff_id);
             let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 // setTimeout(function () {
@@ -88,8 +30,24 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                     // $.ajax(options);
 
                     // Layer.msg(liffContext.userId);
+                    
+                    $(document).on("click", "#test", function () {
+                        liff.sendMessages([
+                            {
+                                type: "text",
+                                text: "Hello, World!",
+                            },
+                        ])
+                        .then(() => {
+                            console.log("message sent");
+                        })
+                        .catch((err) => {
+                            console.log("error", err);
+                        });
+                    });
+
                 }else{
-                    Layer.msg('請由正確網址登入系統"');
+                    Layer.msg('載入異常');
                 }
                 layer.close(mload);
             });
