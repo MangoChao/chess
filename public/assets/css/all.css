@@ -29,6 +29,7 @@ main.content{
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: nowrap;
+    gap: 3px;
 }
 a.send_btn{
     margin: 15px auto;
