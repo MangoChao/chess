@@ -9,7 +9,6 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
     var Controller = {
         index: function () {
             $(document).on("click", ".cho .chess_row a", function () {
-                $(this).addClass("active");
                 let cho = $(this).data("id");
 
                 let choChessArray = [];
@@ -20,12 +19,19 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                     choChessArray = cho_chess.split(',');
                     choChessArray.push(cho);
                 }
-                $("#cho_chess").val(choChessArray.join(',')); 
-
-                const ids = ['cho1', 'cho2', 'cho3', 'cho4', 'cho5'];
-                ids.forEach((id, index) => {
-                    $("#"+id).text(chess[choChessArray[index]]);
-                });
+                if(choChessArray.length <= 5){
+                    $("#cho_chess").val(choChessArray.join(',')); 
+    
+                    const ids = ['cho1', 'cho2', 'cho3', 'cho4', 'cho5'];
+                    ids.forEach((id, index) => {
+                        $("#"+id).text(chess[choChessArray[index]]);
+                    });
+                    $(this).addClass("active");
+                    
+                    if(choChessArray.length == 5){
+                        $(".send_btn").removeClass("hide");
+                    }
+                }
             });
 
             var mload = layer.load();
