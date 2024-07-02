@@ -1,11 +1,4 @@
-define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, undefined, Frontend, Form, Template) {
-    var validatoroptions = {
-        invalid: function (form, errors) {
-            $.each(errors, function (i, j) {
-                Layer.msg(j);
-            });
-        }
-    };
+define(['jquery'], function ($) {
     var Controller = {
         index: function () {
             $(document).on("click", ".cho .chess_row a", function () {
@@ -34,7 +27,6 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 }
             });
 
-            // var mload = layer.load();
             let liff_id = '1655633839-W9D6zO39';
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
@@ -58,7 +50,6 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 }else{
                     Layer.msg('載入異常');
                 }
-                // layer.close(mload);
             });
         },
     };
