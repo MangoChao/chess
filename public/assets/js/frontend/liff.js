@@ -24,7 +24,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
 
                 const ids = ['cho1', 'cho2', 'cho3', 'cho4', 'cho5'];
                 ids.forEach((id, index) => {
-                    $("#"+id).text(choChessArray[index]);
+                    $("#"+id).text(chess[choChessArray[index]]);
                 });
             });
 
