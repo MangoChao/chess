@@ -31,6 +31,7 @@ define(['jquery'], function ($) {
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
                 if(liffContext.userId){
+                    $("#box").show();
                     $(document).on("click", ".send_btn", function () {
                         let cho_chess = $("#cho_chess").val();
                         liff.sendMessages([

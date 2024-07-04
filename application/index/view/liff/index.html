@@ -1,32 +1,34 @@
-<div class="chess_box cho">
-    {foreach $print as $prow}
+<div id="box" class="hide">
+    <div class="chess_box cho">
+        {foreach $print as $prow}
+            <div class="chess_row">
+                {foreach $prow as $p}
+                    <a href="javascript:;" data-id="{$p}">{$chess[$p]}</a>
+                {/foreach}
+            </div>
+        {/foreach}
+    </div>
+    <br>
+    <div class="chess_box">
         <div class="chess_row">
-            {foreach $prow as $p}
-                <a href="javascript:;" data-id="{$p}">{$chess[$p]}</a>
-            {/foreach}
+            <a href="javascript:;" class="active"></a>
+            <a href="javascript:;" id="cho4"></a>
+            <a href="javascript:;" class="active"></a>
         </div>
-    {/foreach}
+        <div class="chess_row">
+            <a href="javascript:;" id="cho2"></a>
+            <a href="javascript:;" id="cho1"></a>
+            <a href="javascript:;" id="cho3"></a>
+        </div>
+        <div class="chess_row">
+            <a href="javascript:;" class="active"></a>
+            <a href="javascript:;" id="cho5"></a>
+            <a href="javascript:;" class="active"></a>
+        </div>
+    </div>
+    <input type="hidden" id="cho_chess" value="" />
+    <a href="javascript:;" class="send_btn hide">送出</a>
 </div>
-<br>
-<div class="chess_box">
-    <div class="chess_row">
-        <a href="javascript:;" class="active"></a>
-        <a href="javascript:;" id="cho4"></a>
-        <a href="javascript:;" class="active"></a>
-    </div>
-    <div class="chess_row">
-        <a href="javascript:;" id="cho2"></a>
-        <a href="javascript:;" id="cho1"></a>
-        <a href="javascript:;" id="cho3"></a>
-    </div>
-    <div class="chess_row">
-        <a href="javascript:;" class="active"></a>
-        <a href="javascript:;" id="cho5"></a>
-        <a href="javascript:;" class="active"></a>
-    </div>
-</div>
-<input type="hidden" id="cho_chess" value="" />
-<a href="javascript:;" class="send_btn hide">送出</a>
 
 <script type="text/javascript">
     var chess = {$chess|json_encode};
