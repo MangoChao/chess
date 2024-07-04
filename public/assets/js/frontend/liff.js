@@ -27,7 +27,7 @@ define(['jquery'], function ($) {
                 }
             });
 
-            let liff_id = '1655633839-W9D6zO39';
+            let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
                 if(liffContext.userId){
