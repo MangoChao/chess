@@ -41,6 +41,7 @@ define(['jquery'], function ($) {
                         ])
                         .then(() => {
                             console.log("message sent");
+                            liff.closeWindow();
                         })
                         .catch((err) => {
                             console.log("error", err);
