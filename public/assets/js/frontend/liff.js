@@ -29,6 +29,7 @@ define(['jquery'], function ($) {
 
             let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
+                $("#box").show();
                 var liffContext = liff.getContext();
                 Layer.msg(liffContext.userId);
                 if(liffContext.userId){
@@ -51,7 +52,7 @@ define(['jquery'], function ($) {
                     });
 
                 }else{
-                    Layer.msg('載入異常');
+                    // Layer.msg('載入異常');
                 }
             });
         },
