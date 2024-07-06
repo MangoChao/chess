@@ -2,7 +2,7 @@ body{
     padding: 0;
 }
 main.content,
-.box{
+#box{
     display: flex;
     flex-direction: column;
 }
