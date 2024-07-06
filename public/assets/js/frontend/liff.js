@@ -32,7 +32,7 @@ define(['jquery'], function ($) {
                 var liffContext = liff.getContext();
                 Layer.msg(liffContext.userId);
                 if(liffContext.userId){
-                    $("#box").show();
+                    $("#box").removeClass("hide");
                     $(document).on("click", ".send_btn", function () {
                         let cho_chess = $("#cho_chess").val();
                         liff.sendMessages([
