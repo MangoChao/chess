@@ -27,7 +27,6 @@ define(['jquery'], function ($) {
                 }
             });
 
-            $("#box").show();
             let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
