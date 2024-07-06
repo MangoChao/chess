@@ -30,6 +30,7 @@ define(['jquery'], function ($) {
             let liff_id = '1655633839-6Jmn4YaZ';
             liff.init({liffId: liff_id}).then(() => {
                 var liffContext = liff.getContext();
+                Layer.msg(liffContext.userId);
                 if(liffContext.userId){
                     $("#box").show();
                     $(document).on("click", ".send_btn", function () {
